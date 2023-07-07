@@ -16,13 +16,12 @@ func init() {
 
 	err = json.Unmarshal(content, &configEnv)
 	if err != nil {
-		log.Fatal("invalid config.json file")
+		log.Fatal("invalid config file")
 	}
 }
 
 var defaultConfig = map[string]string{
 	"HTTP_PORT":       ":8080",
-	"DATABASE_DRIVER": "postgres",
 	"DATABASE_HOST":   "localhost",
 	"DATABASE_PORT":   "5432",
 	"DATABASE_NAME":   "xpora_users",
