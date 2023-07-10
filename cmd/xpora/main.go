@@ -5,6 +5,7 @@ import (
 	netHttp "net/http"
 	"os"
 
+	"bni.co.id/xpora/medias/cmd/container"
 	"bni.co.id/xpora/medias/cmd/http"
 	"bni.co.id/xpora/medias/config"
 	"github.com/go-chi/chi/v5"
@@ -13,8 +14,14 @@ import (
 )
 
 func main() {
+	// dependency injection for container
+	container.NewIOC()
+
+	// logger
 	initLogger()
-	runHTTP()
+
+	// run server
+	runHTTPServer()
 }
 
 func initLogger() {
@@ -24,7 +31,7 @@ func initLogger() {
 	log.SetOutput(os.Stdout)
 }
 
-func runHTTP() {
+func runHTTPServer() {
 	port := config.GetEnv(config.HTTP_PORT)
 
 	if len(port) < 1 {
