@@ -13,7 +13,7 @@ import (
 var db *sql.DB
 var singleton sync.Once
 
-func DB() *sql.DB {
+func PgDB() *sql.DB {
 	singleton.Do(func() {
 		if db == nil {
 			var err error

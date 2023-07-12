@@ -10,7 +10,9 @@ type ApplicationServiceIoC struct {
 
 func NewApplicationServiceIoC(dsIoc DomainServiceIoC, rIoc RepositoryIoC) ApplicationServiceIoC {
 	return ApplicationServiceIoC{
-		application: application.New(),
+		application: application.New(
+			dsIoc.media,
+		),
 	}
 }
 

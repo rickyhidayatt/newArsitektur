@@ -24,9 +24,9 @@ var defaultConfig = map[string]string{
 	"HTTP_PORT":       ":8080",
 	"DATABASE_HOST":   "localhost",
 	"DATABASE_PORT":   "5432",
-	"DATABASE_NAME":   "xpora_users",
+	"DATABASE_NAME":   "upload_task",
 	"DATABASE_USER":   "postgres",
-	"DATABASE_PASS":   "password",
+	"DATABASE_PASS":   "Repsol12",
 	"DATABASE_SSL":    "disable",
 	"TEMP_UPLOAD_DIR": "/temp",
 }
